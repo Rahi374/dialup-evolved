@@ -1,0 +1,18 @@
+With fldigi already running:
+#+BEGIN_SRC python
+import fldigi
+
+c = pyfldigi.Client()
+c.main.get_trx_state()
+
+c.main.squelch_level
+
+c.text.clear_rx()
+c.text.clear_tx()
+
+c.text.get_rx_data()
+c.text.get_tx_data()
+
+c.main.send("aaaa")
+c.rx()
+#+END_SRC

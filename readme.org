@@ -1,0 +1,7 @@
+* Dialup Evolved
+
+** Dependencies
+
+- fldigi
+- python3
+  - pyfldigi
