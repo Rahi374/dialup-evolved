@@ -2,7 +2,8 @@ import base64
 import pyfldigi
 import functools
 from pytun import TunTapDevice
-import scapy
+import random
+from scapy.all import *
 import sys
 import time
 
@@ -58,7 +59,7 @@ tun.up()
 
 print("Ready")
 
-i_am_server = sys.argv[1] == "server"
+i_am_server = len(sys.argv) > 1 and sys.argv[1] == "server"
 
 seq = 0
 old_seq = -1
@@ -70,6 +71,7 @@ def send_net_to_audio_server(scapy_packet):
     send_net_to_audio(bytes(scapy_packet))
 
 def send_net_to_audio(data):
+    global seq
     data_len = len(data)
     b64data = base64.b64encode(bytearray(data))
     b64data_len = len(b64data)
@@ -82,7 +84,7 @@ def send_net_to_audio(data):
     print(data)
     c.main.send(data)
     print("done sending (?)")
-    wake_up_time = time.time() + 12
+    wake_up_time = time.time() + random.randrange(12, 16)
     seq += 1
 
 while True:
