@@ -72,6 +72,7 @@ def send_net_to_audio_server(scapy_packet):
 
 def send_net_to_audio(data):
     global seq
+    global wake_up_time
     data_len = len(data)
     b64data = base64.b64encode(bytearray(data))
     b64data_len = len(b64data)
