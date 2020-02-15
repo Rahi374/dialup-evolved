@@ -74,7 +74,7 @@ def send_net_to_audio(data):
     b64data = base64.b64encode(bytearray(data))
     b64data_len = len(b64data)
     print(f"!!!!! CALCULATING SENDING CHECKSUM ON {b64data}")
-    data = "YYY" + hex(seq)[2:4].zfill(2) + hex(b64data_len)[2:4].zfill(2) + \
+    data = "ABCDEFGHYYY" + hex(seq)[2:4].zfill(2) + hex(b64data_len)[2:4].zfill(2) + \
            str(b64data) + \
            hex(functools.reduce(lambda a, b: a ^ b, b64data))[2:4].zfill(2) + \
            "ZZZ\nde  k\n^r"
