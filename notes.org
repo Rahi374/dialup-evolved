@@ -14,5 +14,5 @@ c.text.get_rx_data()
 c.text.get_tx_data()
 
 c.main.send("aaaa")
-c.rx()
+c.main.rx()
 #+END_SRC

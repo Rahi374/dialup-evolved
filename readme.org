@@ -5,3 +5,13 @@
 - fldigi
 - python3
   - pyfldigi
+  - python-pytun
+  - functools
+  - base64
+
+** Links
+
+- https://stackoverflow.com/questions/15036551/best-way-to-split-a-hexadecimal-in-python
+- https://github.com/montag451/pytun
+- https://backreference.org/2010/03/26/tuntap-interface-tutorial/
+- https://pythonhosted.org/pyfldigi/
